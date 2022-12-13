@@ -13,6 +13,7 @@ import { LocalStrategy } from './local.strategy';
     JwtModule.register({
       secret: "My-secret-passphrase",
       signOptions: {
+        keyid: "true",
         expiresIn: '120s'
       }
     })

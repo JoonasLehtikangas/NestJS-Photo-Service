@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { CreateUserWithEmbeddedProfile } from './dto/create-user-with-embedded-profile';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
@@ -38,6 +39,7 @@ export class UsersController {
     @ApiOperation({ summary: "Update user's data"})
     @ApiResponse({status: 200, description: "OK, user updated", type: User})
     @ApiResponse({status: 404, description: "User ID not found!"})
+    @UseGuards(JwtAuthGuard)
     async updateUser(
         @Param('id') id: number,
         @Body() createUserWithEmbeddedProfile: CreateUserWithEmbeddedProfile
@@ -49,6 +51,7 @@ export class UsersController {
     // access verified with JWT token
     @Post()
     @ApiOperation({ summary: "Create a user"})
+    @UseGuards(JwtAuthGuard)
     @ApiCreatedResponse({
         status: 200,
         description: "The user created successfully",
@@ -66,6 +69,7 @@ export class UsersController {
     @ApiOperation({ summary: "Delete user"})
     @ApiResponse({status: 200, description: "OK, user deleted", type: User})
     @ApiResponse({status: 404, description: "User ID not found!"})
+    @UseGuards(JwtAuthGuard)
     async deleteUser(
         @Param('id') id: number,
     ): Promise<User> {

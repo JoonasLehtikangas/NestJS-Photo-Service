@@ -1,0 +1,874 @@
+{
+	"info": {
+		"_postman_id": "a9a63ed1-4834-49ae-8e80-a2c52a5cdd3c",
+		"name": "Pilvilaskenta - 02-Photo service assignment-v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23765954"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET single user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST user and profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Pena\",\r\n    \"password\": \"testi\",\r\n    \"email\": \"Kissa\",\r\n    \"profile\": {\r\n        \"gender\": \"male\",\r\n        \"photo\": \"url-to-photo\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH user and profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Vesa\",\r\n    \"password\": \"Pesa\",\r\n    \"email\": \"Koira\",\r\n    \"profile\": {\r\n        \"gender\": \"megaFemale\",\r\n        \"photo\": \"url-ur\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user and profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dog\",\r\n    \"description\": \"mydog\",\r\n    \"url\": \"url-to-dog\",\r\n    \"email\": \"Pertsa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"cat\",\r\n    \"description\": \"mycat\",\r\n    \"url\": \"url-to-cat\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/photos/9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"9"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET single photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dog\",\r\n    \"description\": \"mydog\",\r\n    \"url\": \"url-to-dog\",\r\n    \"email\": \"Pertsa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all photos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/photos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"dog\",\r\n    \"description\": \"mydog\",\r\n    \"url\": \"url-to-dog\",\r\n    \"email\": \"Pertsa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/photos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"photos",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"holiday\",\r\n    \"description\": \"sunny day\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/category",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"torstai\",\r\n    \"description\": \"evening\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/category/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/category",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET single category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/category",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"// pm.test(\"Check if user with  id 1 is equal to Leanne Graham\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"// });\r",
+							"// pm.test(\"Body is correct\", function () {\r",
+							"//     pm.response.to.have.body();\r",
+							"// });\r",
+							"// pm.test(\"Response time is less than 200ms\", function () {\r",
+							"//     pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/category/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Leanne Graham",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all profiles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InRydWUifQ.eyJ1c2VybmFtZSI6IlBlcnR0aSIsInN1YiI6MSwiYWRtaW4iOnRydWUsImlhdCI6MTY3MDg1NTk5NiwiZXhwIjoxNjcwODU2MTE2fQ.kShFBnxOqicAvQflHw2mLdwhe4tmWWwvfoigSAUXgmA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "serveraddr",
+			"value": "http://jsonplaceholder.typicode.com"
+		}
+	]
+}

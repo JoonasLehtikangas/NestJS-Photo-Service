@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { Category } from './entities/category.entity';
@@ -39,6 +40,7 @@ export class CategoryController {
         description: "The category created successfully",
         type: Category
     })
+    @UseGuards(JwtAuthGuard)
     async insertCategory(
         @Body() createCategoryDto:CreateCategoryDto
     ): Promise<Category>{  
@@ -51,6 +53,7 @@ export class CategoryController {
     @ApiOperation({ summary: "Update category's data"})
     @ApiResponse({status: 200, description: "OK, category updated", type: Category})
     @ApiResponse({status: 404, description: "Category ID not found!"})
+    @UseGuards(JwtAuthGuard)
     async updateCategory(
         @Param('id') id: number,
         @Body() createCategoryDto:CreateCategoryDto
@@ -64,6 +67,7 @@ export class CategoryController {
     @ApiOperation({ summary: "Delete category"})
     @ApiResponse({status: 200, description: "OK, category deleted", type: Category})
     @ApiResponse({status: 404, description: "Category ID not found!"})
+    @UseGuards(JwtAuthGuard)
     async deleteCategory(
         @Param('id') id: number,
     ): Promise<Category> {

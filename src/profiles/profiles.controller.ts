@@ -19,8 +19,6 @@ export class ProfilesController {
         type: Profile
     })
 
-    //@UseGuards(JwtAuthGuard)
-    //@UseGuards(AuthGuard('jwt'))
     async getProfiles(): Promise<Profile[]> {
         return await this.ProfilesService.getProfiles();
     }

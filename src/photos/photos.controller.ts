@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { CreatePhotoDto } from './dto/create-photo.dto';
 import { Photo } from './entities/photo.entity';
 import { PhotosService } from './photos.service';
@@ -39,6 +40,7 @@ export class PhotosController {
         description: "The photo created successfully",
         type: Photo
     })
+    @UseGuards(JwtAuthGuard)
     async createPhotoUsingEmail(
         @Body() createPhotoDto:CreatePhotoDto
     ): Promise<Photo>{  
@@ -51,6 +53,7 @@ export class PhotosController {
     @ApiOperation({ summary: "Update photo's data"})
     @ApiResponse({status: 200, description: "OK, photo updated", type: Photo})
     @ApiResponse({status: 404, description: "Photo ID not found!"})
+    @UseGuards(JwtAuthGuard)
     async updateSinglePhotos(
         @Param('id') id: number, @Body() createPhotoDto:CreatePhotoDto
         ): Promise<Photo> {
@@ -63,6 +66,7 @@ export class PhotosController {
     @ApiOperation({ summary: "Delete photo"})
     @ApiResponse({status: 200, description: "OK, photo deleted", type: Photo})
     @ApiResponse({status: 404, description: "Pet ID photo found!"})
+    @UseGuards(JwtAuthGuard)
     async deleteSinglePhotos(
         @Param('id') id: number): Promise<Photo> {
         return await this.photosService.deletePhoto(id);
